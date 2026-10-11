@@ -1,0 +1,822 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Jayesh Ingale · Applied ML Engineer</title>
+  <meta name="description" content="Jayesh Ingale is an Applied ML Engineer working across computer vision, LLM agents and production ML, from multitask vision models served on Triton to guarded, citation-checked LLM systems.">
+  <meta name="author" content="Jayesh Ingale">
+  <meta name="theme-color" content="#0f1215">
+  <link rel="canonical" href="https://ijayeshh.github.io/">
+
+  <script>
+    (function () {
+      try { if (localStorage.getItem("theme") === "light") document.documentElement.setAttribute("data-theme", "light"); } catch (e) {}
+    })();
+  </script>
+
+  <!-- Open Graph / social -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ijayeshh.github.io/">
+  <meta property="og:site_name" content="Jayesh Ingale">
+  <meta property="og:title" content="Jayesh Ingale · Applied ML Engineer">
+  <meta property="og:description" content="Computer Vision · LLM Agents · Production ML. Experience, projects and resume.">
+  <meta property="og:image" content="https://ijayeshh.github.io/assets/img/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Jayesh Ingale, Applied ML Engineer. Computer Vision, LLM Agents, Production ML.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Jayesh Ingale · Applied ML Engineer">
+  <meta name="twitter:description" content="Computer Vision · LLM Agents · Production ML.">
+  <meta name="twitter:image" content="https://ijayeshh.github.io/assets/img/og-image.png">
+
+  <!-- Icons -->
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&family=Space+Grotesk:wght@500;600&display=swap">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Jayesh Ingale",
+    "jobTitle": "Applied ML Engineer",
+    "url": "https://ijayeshh.github.io/",
+    "email": "mailto:jingale@ncsu.edu",
+    "worksFor": { "@type": "Organization", "name": "Precision Sustainable Ag", "url": "https://www.precisionsustainableag.org/" },
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "North Carolina State University" },
+      { "@type": "CollegeOrUniversity", "name": "College of Engineering Pune" }
+    ],
+    "knowsAbout": ["Computer Vision", "Large Language Models", "LLM Agents", "Retrieval-Augmented Generation", "MLOps"],
+    "sameAs": ["https://github.com/ijayeshh", "https://www.linkedin.com/in/ingalejayesh/"]
+  }
+  </script>
+
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Icon sprite + shared figure defs -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-github" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.39-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></symbol>
+      <symbol id="i-linkedin" viewBox="0 0 24 24"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></g></symbol>
+      <symbol id="i-download" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></g></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></g></symbol>
+
+      <pattern id="fig-dots" width="16" height="16" patternUnits="userSpaceOnUse"><circle cx="1.5" cy="1.5" r="1" class="fig-dots"/></pattern>
+      <marker id="ah" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 8 4 0 8z" class="fig-arrowhead"/></marker>
+      <marker id="ah-acc" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 8 4 0 8z" class="fig-arrowhead--acc"/></marker>
+      <marker id="ah-sand" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 8 4 0 8z" class="fig-arrowhead--sand"/></marker>
+    </defs>
+  </svg>
+
+  <!-- ============================== NAV ============================== -->
+  <header class="nav">
+    <div class="container nav__inner">
+      <a class="nav__brand" href="#top" aria-label="Jayesh Ingale, back to top">
+        <span class="nav__mark" aria-hidden="true">JI</span>
+        <span>Jayesh Ingale</span>
+      </a>
+      <nav aria-label="Primary">
+        <ul class="nav__links" id="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav__actions">
+        <button class="icon-btn theme-toggle" type="button" aria-label="Switch to light mode">
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6 6 6M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4"/></g></svg>
+        </button>
+        <button class="icon-btn nav__menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============================== HERO ============================== -->
+    <section class="hero" id="top">
+      <div class="container">
+        <p class="hero__eyebrow mono"><span class="hero__dot" aria-hidden="true"></span>Raleigh, NC · MS ECE, NC State</p>
+        <h1 class="hero__name">Jayesh Ingale</h1>
+        <p class="hero__role">Applied ML Engineer</p>
+        <p class="hero__tagline">Computer Vision<span class="sep" aria-hidden="true">·</span>LLM Agents<span class="sep" aria-hidden="true">·</span>Production ML</p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="assets/Jayesh_Ingale_Resume.pdf" download="Jayesh_Ingale_Resume.pdf">
+            <svg aria-hidden="true"><use href="#i-download"/></svg>Resume
+          </a>
+          <a class="btn" href="https://github.com/ijayeshh" target="_blank" rel="noopener">
+            <svg aria-hidden="true"><use href="#i-github"/></svg>GitHub
+          </a>
+          <a class="btn" href="https://www.linkedin.com/in/ingalejayesh/" target="_blank" rel="noopener">
+            <svg aria-hidden="true"><use href="#i-linkedin"/></svg>LinkedIn
+          </a>
+          <a class="btn" href="mailto:jingale@ncsu.edu">
+            <svg aria-hidden="true"><use href="#i-mail"/></svg>Email
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== ABOUT ============================== -->
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="section__label mono"><span class="num">01</span>About</p>
+          <h2 class="section__title" id="about-title">Models that hold up outside the notebook</h2>
+        </div>
+        <div class="about">
+          <div class="about__text reveal">
+            <p>I'm an applied ML engineer, and the part of the job I enjoy most is where models meet real constraints: limited labels, small GPUs, strict data rules, and people who need to trust what the model says.</p>
+            <p>At <strong>Deloitte</strong>, I was part of a team building enterprise GenAI for an insurance client: a retrieval-augmented documentation assistant on AWS Bedrock. I also worked with data engineers on ELT pipelines that brought data from 10+ services into a single source of truth.</p>
+            <p>Today I'm at <strong>Precision Sustainable Ag</strong>, an early-stage AgTech startup where <span class="hl">research and production sit side by side</span>. As part of the ML team, I work on multitask vision models (segmentation, regression, and now depth completion), from multi-GPU training through to serving on NVIDIA Triton.</p>
+            <p>Alongside that, I build <strong>LLM agent systems for fintech and legal</strong>: a multi-agent pipeline over earnings calls, a guarded on-prem banking copilot, and citation-checked contract QA. In each one I put the effort into evaluation, guardrails, and making every claim traceable to a source.</p>
+          </div>
+          <ul class="facts reveal" aria-label="At a glance">
+            <li><span class="k mono">Now</span><span class="v">Applied ML Engineer, Precision Sustainable Ag</span></li>
+            <li><span class="k mono">Before</span><span class="v">Data Scientist, Deloitte AI &amp; Data</span></li>
+            <li><span class="k mono">Education</span><span class="v">MS ECE, NC State University</span></li>
+            <li><span class="k mono">Focus</span><span class="v">Computer Vision · LLM Agents · Production ML</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== EXPERIENCE ============================== -->
+    <section class="section" id="experience" aria-labelledby="experience-title">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="section__label mono"><span class="num">02</span>Experience</p>
+          <h2 class="section__title" id="experience-title">Where I've worked</h2>
+        </div>
+
+        <ol class="timeline">
+          <li class="job reveal">
+            <div class="job__org">
+              <h3><a href="https://www.precisionsustainableag.org/" target="_blank" rel="noopener">Precision Sustainable Ag</a></h3>
+              <span class="job__where mono">Early-stage startup · Raleigh, NC</span>
+            </div>
+
+            <div class="role">
+              <div class="role__head">
+                <h4 class="role__title">Applied ML Engineer <span class="role__badge">Current</span></h4>
+                <span class="role__date mono">Jun 2026 to Present</span>
+              </div>
+              <ul class="bullets">
+                <li>Part of the team integrating <strong>stereo vision</strong> and <strong>monocular Depth Pro</strong> maps for <strong>depth completion</strong> into the existing pipeline, adding depth as a new task in the multitask model.</li>
+              </ul>
+            </div>
+
+            <div class="role">
+              <div class="role__head">
+                <h4 class="role__title">Applied ML Intern</h4>
+                <span class="role__date mono">May 2025 to May 2026</span>
+              </div>
+              <ul class="bullets">
+                <li>I was part of a team that fine-tuned <strong>DeepLabV3+</strong> with ResNet-101 encoders in PyTorch as a <strong>multitask model</strong> for semantic segmentation and regression, balanced with a weighted multi-task loss.</li>
+                <li>Worked on an end-to-end training pipeline across multiple <strong>NVIDIA A100</strong> GPUs that cut training time by <span class="metric">43%</span>.</li>
+                <li>Helped deploy models with <strong>MLflow</strong> experiment tracking and automate CI workflows with <strong>GitHub Actions</strong>.</li>
+                <li>Implemented <strong>ONNX</strong> serving on <strong>NVIDIA Triton Inference Server</strong> with dynamic batching and multi-instance execution, improving inference throughput by <span class="metric">20×</span>.</li>
+                <li>Applied <strong>causal reasoning (ATE)</strong> to measure how surrounding vegetation drives clover prediction error, tracing it to occlusion, and used <strong>Grad-CAM</strong> to rule out spurious correlations for domain experts.</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="job job--past reveal">
+            <div class="job__org">
+              <h3>Deloitte · AI &amp; Data</h3>
+              <span class="job__where mono">India</span>
+            </div>
+            <div class="role">
+              <div class="role__head">
+                <h4 class="role__title">Data Scientist</h4>
+                <span class="role__date mono">Jan 2023 to Jul 2024</span>
+              </div>
+              <ul class="bullets">
+                <li>I was part of a team that prototyped an internal <strong>documentation assistant</strong> for an insurance client using <strong>RAG</strong> and prompt engineering on AWS (Bedrock, Titan embeddings, Knowledge Bases, S3), reducing query response time by <span class="metric">30%</span>.</li>
+                <li>Worked with the Data Engineering team on <strong>ELT pipelines</strong> (Python, SQL) that consolidated data from <span class="metric">10+</span> services into a single source of truth, handling <span class="metric">1M+</span> records monthly in production.</li>
+              </ul>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============================== PROJECTS ============================== -->
+    <section class="section" id="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="section__label mono"><span class="num">03</span>Projects</p>
+          <h2 class="section__title" id="projects-title">Selected work</h2>
+          <p class="section__intro">Each project lists the problem, the approach, and the results as they're reported in its repository.</p>
+        </div>
+
+        <div class="tabs" role="tablist" aria-label="Project categories">
+          <button class="tab" role="tab" id="tab-llm" aria-selected="true" aria-controls="panel-llm" type="button">LLM &amp; Agents<span class="count">05</span></button>
+          <button class="tab" role="tab" id="tab-cv" aria-selected="false" aria-controls="panel-cv" tabindex="-1" type="button">Computer Vision<span class="count">03</span></button>
+        </div>
+
+        <!-- ---------- LLM & Agents ---------- -->
+        <div class="panel" id="panel-llm" role="tabpanel" aria-labelledby="tab-llm" tabindex="0">
+          <div class="grid">
+
+            <!-- Earnings call ontology -->
+            <article class="card reveal">
+              <figure class="card__fig">
+                <svg viewBox="0 0 480 270" role="img" aria-label="Diagram: a supervisor agent routes transcripts through a topic retriever and ontologist into a growing topic tree, and routes questions through RAG and a judge with a retry loop to a cited answer.">
+                  <rect class="fig-bg" width="480" height="270"/><rect width="480" height="270" fill="url(#fig-dots)"/>
+                  <text class="fig-t fig-t--s" x="20" y="26">LANGGRAPH</text>
+                  <text class="fig-t fig-t--s" x="140" y="40">INGEST</text>
+                  <text class="fig-t fig-t--s" x="140" y="252">Q&amp;A</text>
+                  <rect class="fig-node fig-node--acc" x="20" y="118" width="92" height="34" rx="7"/>
+                  <text class="fig-t" x="66" y="139" text-anchor="middle">Supervisor</text>
+                  <path class="fig-line" d="M112 128 C126 128 124 63 138 63" marker-end="url(#ah)"/>
+                  <path class="fig-line" d="M112 142 C126 142 124 205 138 205" marker-end="url(#ah)"/>
+                  <rect class="fig-node" x="140" y="48" width="86" height="30" rx="6"/>
+                  <text class="fig-t" x="183" y="67" text-anchor="middle">Retriever</text>
+                  <path class="fig-line" d="M226 63 H250" marker-end="url(#ah)"/>
+                  <rect class="fig-node" x="252" y="48" width="92" height="30" rx="6"/>
+                  <text class="fig-t" x="298" y="67" text-anchor="middle">Ontologist</text>
+                  <path class="fig-line" d="M344 63 H368" marker-end="url(#ah)"/>
+                  <rect class="fig-line fig-dash" x="370" y="22" width="98" height="128" rx="8"/>
+                  <path class="fig-line" d="M420 40 L396 76 M420 40 L444 76 M396 76 L384 110 M396 76 L408 110 M444 76 L432 110"/>
+                  <path class="fig-line fig-line--sand" d="M444 76 L456 110"/>
+                  <circle class="fig-fill-acc" cx="420" cy="40" r="5"/>
+                  <circle class="fig-node" cx="396" cy="76" r="4.5"/><circle class="fig-node" cx="444" cy="76" r="4.5"/>
+                  <circle class="fig-node" cx="384" cy="110" r="4"/><circle class="fig-node" cx="408" cy="110" r="4"/><circle class="fig-node" cx="432" cy="110" r="4"/>
+                  <circle class="fig-fill-sand" cx="456" cy="110" r="4.5"/>
+                  <text class="fig-t fig-t--s fig-t--sand" x="456" y="128" text-anchor="middle">new</text>
+                  <text class="fig-t fig-t--s" x="380" y="143">ontology</text>
+                  <rect class="fig-node" x="140" y="190" width="86" height="30" rx="6"/>
+                  <text class="fig-t" x="183" y="209" text-anchor="middle">RAG</text>
+                  <path class="fig-line" d="M226 205 H250" marker-end="url(#ah)"/>
+                  <rect class="fig-node" x="252" y="190" width="92" height="30" rx="6"/>
+                  <text class="fig-t" x="298" y="209" text-anchor="middle">Judge</text>
+                  <path class="fig-line fig-line--sand fig-dash" d="M290 189 C282 164 200 164 192 187" marker-end="url(#ah-sand)"/>
+                  <text class="fig-t fig-t--s fig-t--sand" x="241" y="161" text-anchor="middle">retry</text>
+                  <path class="fig-line fig-line--acc" d="M344 205 H368" marker-end="url(#ah-acc)"/>
+                  <rect class="fig-node fig-node--acc" x="370" y="190" width="98" height="30" rx="6"/>
+                  <text class="fig-t fig-t--acc" x="419" y="209" text-anchor="middle">cited answer</text>
+                </svg>
+              </figure>
+              <div class="card__body">
+                <p class="card__kicker mono">Agentic RAG · Finance</p>
+                <h3 class="card__title">Self-Evolving Topic Ontology for Earnings Calls</h3>
+                <dl>
+                  <div><dt>Problem</dt><dd>Earnings call transcripts are long and unstructured. Analysts need financial topics tracked consistently across quarters, without a fixed taxonomy that goes stale.</dd></div>
+                  <div><dt>Approach</dt><dd>Reproduced Bloomberg's paper <em>“Agentic Retrieval of Topics and Insights from Earnings Calls”</em>. A LangGraph Supervisor routes ingestion through Retriever and Ontologist agents that grow a topic tree in SQLite/ChromaDB, and routes questions through RAG and a Judge agent with a citation-enforcing retry loop. It runs on rate-limited Groq inference and is exposed to external clients through an MCP server.</dd></div>
+                  <div><dt>Results</dt><dd>
+                    <ul class="results">
+                      <li>Ontology coherence <span class="metric">0.48</span> vs <span class="metric">0.18</span> random-parent baseline</li>
+                      <li>Retrieval hit@10 of <span class="metric">0.80</span></li>
+                      <li>LLM-as-judge faithfulness suite with LangSmith tracing</li>
+                    </ul>
+                  </dd></div>
+                </dl>
+                <ul class="tags" aria-label="Tech stack">
+                  <li class="tag">LangGraph</li><li class="tag">LangSmith</li><li class="tag">MCP</li><li class="tag">Groq</li><li class="tag">ChromaDB</li><li class="tag">SQLite</li><li class="tag">FastAPI</li><li class="tag">React/TS</li>
+                </ul>
+                <a class="card__link" href="https://github.com/ijayeshh/bloomberg-ontology-for-earning-calls" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-github"/></svg>View on GitHub<svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+              </div>
+            </article>
+
+            <!-- SentinelBank -->
+            <article class="card reveal">
+              <figure class="card__fig">
+                <svg viewBox="0 0 480 270" role="img" aria-label="Diagram: a relationship manager's query passes through layered guardrails (PII, injection, SQL, entitlement, human approval, audit) to PostgreSQL; a poisoned database row returning to the model is quarantined at the injection rail, and every request is written to a hash-chained audit log.">
+                  <rect class="fig-bg" width="480" height="270"/><rect width="480" height="270" fill="url(#fig-dots)"/>
+                  <text class="fig-t fig-t--s" x="20" y="26">ON-PREM · LLAMA 3.2 3B</text>
+                  <text class="fig-t fig-t--s" x="215" y="52" text-anchor="middle">LAYERED RAILS</text>
+                  <rect class="fig-node" x="20" y="118" width="78" height="34" rx="7"/>
+                  <text class="fig-t" x="59" y="139" text-anchor="middle">RM query</text>
+                  <path class="fig-line fig-line--acc" d="M98 135 H352" marker-end="url(#ah-acc)"/>
+                  <path class="fig-line fig-line--sand fig-dash" d="M354 182 H182" marker-end="url(#ah-sand)"/>
+                  <g>
+                    <rect class="fig-node fig-node--acc" x="128" y="64" width="12" height="142" rx="3"/>
+                    <rect class="fig-node fig-node--acc" x="162" y="64" width="12" height="142" rx="3"/>
+                    <rect class="fig-node fig-node--acc" x="196" y="64" width="12" height="142" rx="3"/>
+                    <rect class="fig-node fig-node--acc" x="230" y="64" width="12" height="142" rx="3"/>
+                    <rect class="fig-node fig-node--acc" x="264" y="64" width="12" height="142" rx="3"/>
+                    <rect class="fig-node fig-node--acc" x="298" y="64" width="12" height="142" rx="3"/>
+                  </g>
+                  <circle class="fig-node fig-node--sand" cx="168" cy="182" r="8"/>
+                  <path class="fig-line fig-line--sand" d="M164 178 L172 186 M172 178 L164 186"/>
+                  <text class="fig-t fig-t--s" x="134" y="224" text-anchor="middle">PII</text>
+                  <text class="fig-t fig-t--s" x="168" y="224" text-anchor="middle">INJ</text>
+                  <text class="fig-t fig-t--s" x="202" y="224" text-anchor="middle">SQL</text>
+                  <text class="fig-t fig-t--s" x="236" y="224" text-anchor="middle">ENT</text>
+                  <text class="fig-t fig-t--s" x="270" y="224" text-anchor="middle">HITL</text>
+                  <text class="fig-t fig-t--s" x="304" y="224" text-anchor="middle">AUDIT</text>
+                  <text class="fig-t fig-t--s fig-t--sand" x="168" y="242" text-anchor="middle">quarantined</text>
+                  <path class="fig-node" d="M356 100 V170 A44 10 0 0 0 444 170 V100"/>
+                  <ellipse class="fig-node" cx="400" cy="100" rx="44" ry="10"/>
+                  <text class="fig-t fig-t--b" x="400" y="136" text-anchor="middle">Postgres</text>
+                  <text class="fig-t fig-t--s" x="400" y="152" text-anchor="middle">+ pgvector</text>
+                  <text class="fig-t fig-t--s fig-t--sand" x="400" y="198" text-anchor="middle">poisoned row</text>
+                  <text class="fig-t fig-t--s" x="400" y="222" text-anchor="middle">SHA-256 CHAIN</text>
+                  <path class="fig-line" d="M380 239 H388 M416 239 H424"/>
+                  <rect class="fig-node" x="356" y="232" width="24" height="14" rx="3"/>
+                  <rect class="fig-node" x="388" y="232" width="28" height="14" rx="3"/>
+                  <rect class="fig-node fig-node--acc" x="424" y="232" width="24" height="14" rx="3"/>
+                </svg>
+              </figure>
+              <div class="card__body">
+                <p class="card__kicker mono">LLM Security · Banking</p>
+                <h3 class="card__title">SentinelBank: Self-Hosted Banking Copilot with Layered Guardrails</h3>
+                <dl>
+                  <div><dt>Problem</dt><dd>Relationship managers want to query customer portfolios in plain English, but bank customer data can't go to a third-party API. Prompt injections can also arrive inside retrieved data, not just in what the user types.</dd></div>
+                  <div><dt>Approach</dt><dd>A fully on-prem LangGraph agent on Llama 3.2 3B (Ollama, 4 GB GPU), using text-to-SQL and vector RAG over PostgreSQL/pgvector. Every request passes through layered rails: Presidio PII redaction, prompt-injection scans on input and tool results, AST-level SQL validation, entitlement enforcement, human-in-the-loop approval, and a SHA-256 hash-chained audit log.</dd></div>
+                  <div><dt>Results</dt><dd>
+                    <ul class="results">
+                      <li><span class="metric">84.6%</span> precision on a 30-case red-team suite</li>
+                      <li>Unseen-attack detection reported separately (<span class="metric">4/8</span> held-out vs 6/6 authored), so it isn't averaged away</li>
+                      <li>Guardrails are <span class="metric">4.9%</span> of median end-to-end latency, backed by 439 offline tests</li>
+                    </ul>
+                  </dd></div>
+                </dl>
+                <ul class="tags" aria-label="Tech stack">
+                  <li class="tag">Llama 3.2</li><li class="tag">Ollama</li><li class="tag">LangGraph</li><li class="tag">FastAPI</li><li class="tag">PostgreSQL/pgvector</li><li class="tag">Presidio</li><li class="tag">Streamlit</li><li class="tag">pytest</li>
+                </ul>
+                <a class="card__link" href="https://github.com/ijayeshh/self-hosted-ai-banking-copliot" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-github"/></svg>View on GitHub<svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+              </div>
+            </article>
+
+            <!-- Legal hybrid retrieval + NLI -->
+            <article class="card reveal">
+              <figure class="card__fig">
+                <svg viewBox="0 0 480 270" role="img" aria-label="Diagram: a question goes to BM25 and dense retrieval, fused with reciprocal rank fusion, reranked, and answered by Mistral; the answer is split into atomic claims, an NLI gate verifies each against its cited span, and unsupported claims are regenerated.">
+                  <rect class="fig-bg" width="480" height="270"/><rect width="480" height="270" fill="url(#fig-dots)"/>
+                  <text class="fig-t fig-t--s" x="20" y="26">CUAD CONTRACTS</text>
+                  <rect class="fig-node" x="20" y="50" width="76" height="30" rx="6"/>
+                  <text class="fig-t" x="58" y="69" text-anchor="middle">question</text>
+                  <path class="fig-line" d="M96 60 C106 60 106 48 116 48" marker-end="url(#ah)"/>
+                  <path class="fig-line" d="M96 70 C106 70 106 98 116 98" marker-end="url(#ah)"/>
+                  <rect class="fig-node" x="118" y="36" width="66" height="24" rx="5"/>
+                  <text class="fig-t" x="151" y="52" text-anchor="middle">BM25</text>
+                  <rect class="fig-node" x="118" y="86" width="66" height="24" rx="5"/>
+                  <text class="fig-t" x="151" y="102" text-anchor="middle">dense</text>
+                  <path class="fig-line" d="M184 48 C194 48 194 60 204 60" marker-end="url(#ah)"/>
+                  <path class="fig-line" d="M184 98 C194 98 194 70 204 70" marker-end="url(#ah)"/>
+                  <rect class="fig-node" x="206" y="50" width="48" height="30" rx="6"/>
+                  <text class="fig-t" x="230" y="69" text-anchor="middle">RRF</text>
+                  <path class="fig-line" d="M254 65 H270" marker-end="url(#ah)"/>
+                  <rect class="fig-node" x="272" y="50" width="70" height="30" rx="6"/>
+                  <text class="fig-t" x="307" y="69" text-anchor="middle">rerank</text>
+                  <path class="fig-line" d="M342 65 H358" marker-end="url(#ah)"/>
+                  <rect class="fig-node fig-node--acc" x="360" y="50" width="96" height="30" rx="6"/>
+                  <text class="fig-t fig-t--acc" x="408" y="69" text-anchor="middle">Mistral</text>
+                  <path class="fig-line" d="M408 80 V104" marker-end="url(#ah)"/>
+                  <text class="fig-t fig-t--s" x="400" y="97" text-anchor="end">atomic claims</text>
+                  <rect class="fig-node" x="236" y="108" width="224" height="26" rx="5"/>
+                  <text class="fig-t" x="248" y="125">claim 1</text><text class="fig-t fig-t--s" x="312" y="125">↳ span 12</text>
+                  <path class="fig-line fig-line--acc" d="M436 121 l4 4 l8 -8"/>
+                  <rect class="fig-node" x="236" y="140" width="224" height="26" rx="5"/>
+                  <text class="fig-t" x="248" y="157">claim 2</text><text class="fig-t fig-t--s" x="312" y="157">↳ span 4</text>
+                  <path class="fig-line fig-line--acc" d="M436 153 l4 4 l8 -8"/>
+                  <rect class="fig-node fig-node--sand" x="236" y="172" width="224" height="26" rx="5"/>
+                  <text class="fig-t" x="248" y="189">claim 3</text><text class="fig-t fig-t--s" x="312" y="189">↳ span 9</text>
+                  <path class="fig-line fig-line--sand" d="M437 181 l8 8 M445 181 l-8 8"/>
+                  <path class="fig-line fig-line--sand fig-dash" d="M460 185 C474 185 474 65 462 65" marker-end="url(#ah-sand)"/>
+                  <text class="fig-t fig-t--s fig-t--sand" x="348" y="218" text-anchor="middle">unsupported → regenerate</text>
+                  <rect class="fig-node" x="20" y="124" width="150" height="56" rx="8"/>
+                  <text class="fig-t fig-t--b" x="95" y="148" text-anchor="middle">NLI gate</text>
+                  <text class="fig-t fig-t--s" x="95" y="166" text-anchor="middle">claim ⊨ cited span?</text>
+                  <path class="fig-line fig-line--acc" d="M170 152 H232" marker-end="url(#ah-acc)"/>
+                  <text class="fig-t fig-t--s" x="20" y="252">HYBRID RETRIEVAL · CROSS-ENCODER · NLI</text>
+                </svg>
+              </figure>
+              <div class="card__body">
+                <p class="card__kicker mono">Grounded QA · Legal</p>
+                <h3 class="card__title">Hybrid Retrieval and NLI Verification for Legal Contracts</h3>
+                <dl>
+                  <div><dt>Problem</dt><dd>In legal QA a fluent but unsupported claim is worse than no answer, so faithfulness has to be measurable rather than assumed.</dd></div>
+                  <div><dt>Approach</dt><dd>Citation-grounded QA over CUAD contracts. Hybrid retrieval combines BM25 and FAISS embeddings with reciprocal rank fusion and cross-encoder reranking. Mistral answers only from retrieved spans, and each answer is split into atomic claims. A LangGraph loop runs an NLI gate on every claim against its cited span and rewrites unsupported ones. Includes an MCP search tool, Langfuse tracing, and promptfoo/pytest CI.</dd></div>
+                  <div><dt>Results</dt><dd>
+                    <ul class="results">
+                      <li><span class="metric">0.875</span> accuracy on an unseen, contamination-controlled LegalBench task</li>
+                      <li>Dual faithfulness scoring, NLI <span class="metric">0.42</span> vs LLM-judge <span class="metric">0.78</span>, to quantify how reliable each metric is <span class="fine">(sample snapshot)</span></li>
+                      <li>Citations scored against CUAD gold spans at the character-offset level</li>
+                    </ul>
+                  </dd></div>
+                </dl>
+                <ul class="tags" aria-label="Tech stack">
+                  <li class="tag">LangGraph</li><li class="tag">FAISS</li><li class="tag">BM25</li><li class="tag">Mistral</li><li class="tag">FastAPI</li><li class="tag">Streamlit</li><li class="tag">MCP</li><li class="tag">Langfuse</li><li class="tag">promptfoo</li>
+                </ul>
+                <a class="card__link" href="https://github.com/ijayeshh/hybrid-retrieval-legal-contracts" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-github"/></svg>View on GitHub<svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+              </div>
+            </article>
+
+            <!-- DPO -->
+            <article class="card reveal">
+              <figure class="card__fig">
+                <svg viewBox="0 0 480 270" role="img" aria-label="Diagram: a prompt with a chosen and a rejected response trains Qwen2.5-7B with LoRA adapters using DPO, raising the likelihood of the chosen response and lowering the rejected one.">
+                  <rect class="fig-bg" width="480" height="270"/><rect width="480" height="270" fill="url(#fig-dots)"/>
+                  <text class="fig-t fig-t--s" x="20" y="26">PREFERENCE PAIRS</text>
+                  <text class="fig-t fig-t--s fig-t--acc" x="460" y="26" text-anchor="end">DPO · NO REWARD MODEL</text>
+                  <rect class="fig-node" x="20" y="98" width="104" height="74" rx="8"/>
+                  <text class="fig-t fig-t--s" x="32" y="116">PROMPT</text>
+                  <rect class="fig-fill-stroke" x="32" y="126" width="80" height="5" rx="2.5"/>
+                  <rect class="fig-fill-stroke" x="32" y="138" width="64" height="5" rx="2.5"/>
+                  <rect class="fig-fill-stroke" x="32" y="150" width="74" height="5" rx="2.5"/>
+                  <path class="fig-line" d="M124 125 C142 125 142 80 158 80" marker-end="url(#ah)"/>
+                  <path class="fig-line" d="M124 145 C142 145 142 190 158 190" marker-end="url(#ah)"/>
+                  <rect class="fig-node fig-node--acc" x="160" y="48" width="128" height="64" rx="8"/>
+                  <text class="fig-t fig-t--s fig-t--acc" x="172" y="66">CHOSEN</text>
+                  <path class="fig-line fig-line--acc" d="M266 60 l4 4 l8 -8"/>
+                  <rect class="fig-fill-acc" x="172" y="78" width="96" height="5" rx="2.5" opacity=".55"/>
+                  <rect class="fig-fill-acc" x="172" y="90" width="78" height="5" rx="2.5" opacity=".55"/>
+                  <rect class="fig-node" x="160" y="158" width="128" height="64" rx="8"/>
+                  <text class="fig-t fig-t--s" x="172" y="176">REJECTED</text>
+                  <path class="fig-line" d="M267 168 l8 8 M275 168 l-8 8"/>
+                  <rect class="fig-fill-stroke" x="172" y="188" width="92" height="5" rx="2.5"/>
+                  <rect class="fig-fill-stroke" x="172" y="200" width="70" height="5" rx="2.5"/>
+                  <path class="fig-line fig-line--acc" d="M288 80 C306 80 306 112 322 112" marker-end="url(#ah-acc)"/>
+                  <path class="fig-line" d="M288 190 C306 190 306 154 322 154" marker-end="url(#ah)"/>
+                  <rect class="fig-node" x="324" y="80" width="136" height="98" rx="8"/>
+                  <text class="fig-t fig-t--b" x="336" y="102">Qwen2.5-7B</text>
+                  <text class="fig-t fig-t--s" x="336" y="118">4-BIT · UNSLOTH</text>
+                  <rect class="fig-node fig-node--acc" x="336" y="136" width="12" height="26" rx="2"/>
+                  <rect class="fig-node fig-node--acc" x="352" y="136" width="12" height="26" rx="2"/>
+                  <rect class="fig-node fig-node--acc" x="368" y="136" width="12" height="26" rx="2"/>
+                  <rect class="fig-node fig-node--acc" x="384" y="136" width="12" height="26" rx="2"/>
+                  <text class="fig-t fig-t--s fig-t--acc" x="406" y="153">LoRA</text>
+                  <text class="fig-t fig-t--s" x="324" y="212">π(chosen)</text>
+                  <rect class="fig-fill-stroke" x="398" y="205" width="62" height="7" rx="3.5" opacity=".5"/>
+                  <rect class="fig-fill-acc" x="398" y="205" width="52" height="7" rx="3.5"/>
+                  <text class="fig-t fig-t--s" x="324" y="234">π(rejected)</text>
+                  <rect class="fig-fill-stroke" x="398" y="227" width="62" height="7" rx="3.5" opacity=".5"/>
+                  <rect class="fig-fill-muted" x="398" y="227" width="16" height="7" rx="3.5"/>
+                </svg>
+              </figure>
+              <div class="card__body">
+                <p class="card__kicker mono">Fine-tuning · Alignment</p>
+                <h3 class="card__title">LLM Alignment with Direct Preference Optimization</h3>
+                <dl>
+                  <div><dt>Problem</dt><dd>Steering a model's responses usually means RLHF: a separate reward model plus a reinforcement-learning loop, which is heavy and brittle to tune.</dd></div>
+                  <div><dt>Approach</dt><dd>Aligned Qwen2.5-7B-Instruct with DPO directly on (prompt, chosen, rejected) pairs about ethical questions around AI-generated art. The model is loaded in 4-bit with Unsloth, with LoRA adapters on the attention and MLP projections, and trained with TRL's DPOTrainer.</dd></div>
+                  <div><dt>Results</dt><dd>
+                    <ul class="results">
+                      <li>Pre- vs post-alignment outputs on held-out questions compared with an LLM-as-a-judge framework</li>
+                      <li>7B alignment that fits a single Colab-class GPU via 4-bit quantization and PEFT</li>
+                      <li>Configurable epochs, data size and label balance for studying alignment strength</li>
+                    </ul>
+                  </dd></div>
+                </dl>
+                <ul class="tags" aria-label="Tech stack">
+                  <li class="tag">Qwen2.5-7B</li><li class="tag">DPO</li><li class="tag">LoRA/PEFT</li><li class="tag">Unsloth</li><li class="tag">TRL</li><li class="tag">Transformers</li>
+                </ul>
+                <a class="card__link" href="https://github.com/ijayeshh/LLM-Alignment-using-Direct-Preference-Optimization" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-github"/></svg>View on GitHub<svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+              </div>
+            </article>
+
+            <!-- Metadata-enriched legal RAG -->
+            <article class="card reveal">
+              <figure class="card__fig">
+                <svg viewBox="0 0 480 270" role="img" aria-label="Diagram: legal document chunks tagged with jurisdiction, document type and authority rank pass through a policy filter on jurisdiction, recency and authority before one chunk is selected and passed to the LLM.">
+                  <rect class="fig-bg" width="480" height="270"/><rect width="480" height="270" fill="url(#fig-dots)"/>
+                  <text class="fig-t fig-t--s" x="20" y="26">16 DOCS · 65 CHUNKS</text>
+                  <g>
+                    <rect class="fig-node" x="20" y="44" width="164" height="38" rx="6"/>
+                    <rect class="fig-fill-stroke" x="30" y="54" width="96" height="4" rx="2"/>
+                    <text class="fig-t fig-t--s" x="30" y="74">US-FED · statute · r3</text>
+                    <rect class="fig-node" x="20" y="92" width="164" height="38" rx="6"/>
+                    <rect class="fig-fill-stroke" x="30" y="102" width="80" height="4" rx="2"/>
+                    <text class="fig-t fig-t--s" x="30" y="122">US-CA · bulletin · r2</text>
+                    <rect class="fig-node" x="20" y="140" width="164" height="38" rx="6"/>
+                    <rect class="fig-fill-stroke" x="30" y="150" width="104" height="4" rx="2"/>
+                    <text class="fig-t fig-t--s" x="30" y="170">US-FED · FAQ · r2</text>
+                    <rect class="fig-node" x="20" y="188" width="164" height="38" rx="6"/>
+                    <rect class="fig-fill-stroke" x="30" y="198" width="88" height="4" rx="2"/>
+                    <text class="fig-t fig-t--s" x="30" y="218">US-CA · statute · r3</text>
+                  </g>
+                  <path class="fig-line" d="M184 63 C204 63 204 100 220 104 M184 111 C202 111 204 122 220 124 M184 159 C202 159 204 148 220 146 M184 207 C204 207 204 170 220 166"/>
+                  <polygon class="fig-node" points="220,52 316,104 316,166 220,218"/>
+                  <text class="fig-t fig-t--s" x="230" y="122">jurisdiction</text>
+                  <text class="fig-t fig-t--s" x="230" y="138">recency</text>
+                  <text class="fig-t fig-t--s" x="230" y="154">authority</text>
+                  <path class="fig-line fig-line--acc" d="M316 135 H330" marker-end="url(#ah-acc)"/>
+                  <rect class="fig-node fig-node--acc" x="332" y="110" width="128" height="50" rx="6"/>
+                  <rect class="fig-fill-acc" x="342" y="120" width="86" height="4" rx="2" opacity=".55"/>
+                  <text class="fig-t fig-t--s fig-t--acc" x="342" y="138">US-FED · statute</text>
+                  <text class="fig-t fig-t--s fig-t--acc" x="342" y="152">latest · r3</text>
+                  <path class="fig-line" d="M396 160 V184" marker-end="url(#ah)"/>
+                  <rect class="fig-node" x="344" y="186" width="104" height="30" rx="6"/>
+                  <text class="fig-t" x="396" y="205" text-anchor="middle">LLM answer</text>
+                  <text class="fig-t fig-t--s fig-t--sand" x="20" y="252">CONFLICTING PENALTIES ACROSS YEARS &amp; JURISDICTIONS</text>
+                </svg>
+              </figure>
+              <div class="card__body">
+                <p class="card__kicker mono">RAG · Legal</p>
+                <h3 class="card__title">Metadata-Enriched Retrieval for Legal QA</h3>
+                <dl>
+                  <div><dt>Problem</dt><dd>Legal sources conflict across jurisdictions and years, and plain top-k similarity retrieval quietly mixes them in the same context.</dd></div>
+                  <div><dt>Approach</dt><dd>Built in two stages. The first is a vanilla LangChain RAG baseline (bge-small embeddings, Chroma, Groq Llama 3.1). The second is a policy layer that stamps jurisdiction, effective date and authority rank onto every chunk, which enables filtering by jurisdiction, recency and authority before generation.</dd></div>
+                  <div><dt>Results</dt><dd>
+                    <ul class="results">
+                      <li>Runnable baseline and policy-layer pipelines side by side for comparison</li>
+                      <li>Metadata validated on every chunk at index time (65 chunks from 16 federal and California documents)</li>
+                      <li>Stress-test queries that make the conflicting-source problem visible</li>
+                    </ul>
+                  </dd></div>
+                </dl>
+                <ul class="tags" aria-label="Tech stack">
+                  <li class="tag">LangChain</li><li class="tag">ChromaDB</li><li class="tag">Groq</li><li class="tag">Hugging Face</li><li class="tag">bge-small</li>
+                </ul>
+                <a class="card__link" href="https://github.com/ijayeshh/metadata-enriched-retrieval-legal-qa" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-github"/></svg>View on GitHub<svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- ---------- Computer Vision ---------- -->
+        <div class="panel" id="panel-cv" role="tabpanel" aria-labelledby="tab-cv" tabindex="0" hidden>
+          <div class="grid">
+
+            <!-- SSL -->
+            <article class="card reveal">
+              <figure class="card__fig">
+                <svg viewBox="0 0 480 270" role="img" aria-label="Diagram: an unlabeled image is augmented into two views, encoded by a shared encoder and projection head, and their embeddings are pulled together while other images are pushed apart.">
+                  <rect class="fig-bg" width="480" height="270"/><rect width="480" height="270" fill="url(#fig-dots)"/>
+                  <text class="fig-t fig-t--s" x="20" y="26">STL10 · UNLABELED</text>
+                  <rect class="fig-node" x="20" y="100" width="70" height="70" rx="6"/>
+                  <circle class="fig-fill-sand" cx="70" cy="118" r="6"/>
+                  <path class="fig-fill-stroke" d="M22 168 L44 132 L58 150 L70 138 L88 168 Z"/>
+                  <text class="fig-t fig-t--s" x="98" y="139">augment</text>
+                  <path class="fig-line" d="M90 122 C110 122 110 70 128 70" marker-end="url(#ah)"/>
+                  <path class="fig-line" d="M90 148 C110 148 110 200 128 200" marker-end="url(#ah)"/>
+                  <rect class="fig-node fig-node--acc" x="130" y="40" width="60" height="60" rx="6"/>
+                  <path class="fig-fill-acc" d="M131 99 L160 56 L189 99 Z" opacity=".45"/>
+                  <rect class="fig-node" x="130" y="170" width="60" height="60" rx="6"/>
+                  <g transform="rotate(-12 160 200)">
+                    <path class="fig-fill-muted" d="M138 224 L154 192 L166 206 L176 196 L186 224 Z"/>
+                    <circle class="fig-fill-muted" cx="176" cy="182" r="5"/>
+                  </g>
+                  <path class="fig-line" d="M190 70 H210" marker-end="url(#ah)"/>
+                  <path class="fig-line" d="M190 200 H210" marker-end="url(#ah)"/>
+                  <polygon class="fig-node" points="212,46 262,58 262,82 212,94"/>
+                  <text class="fig-t" x="233" y="74" text-anchor="middle">f(·)</text>
+                  <polygon class="fig-node" points="212,176 262,188 262,212 212,224"/>
+                  <text class="fig-t" x="233" y="204" text-anchor="middle">f(·)</text>
+                  <path class="fig-line fig-dash" d="M237 96 V174"/>
+                  <text class="fig-t fig-t--s" x="244" y="139">shared</text>
+                  <path class="fig-line" d="M262 70 H278" marker-end="url(#ah)"/>
+                  <path class="fig-line" d="M262 200 H278" marker-end="url(#ah)"/>
+                  <rect class="fig-node" x="280" y="58" width="34" height="24" rx="5"/>
+                  <text class="fig-t" x="297" y="74" text-anchor="middle">g</text>
+                  <rect class="fig-node" x="280" y="188" width="34" height="24" rx="5"/>
+                  <text class="fig-t" x="297" y="204" text-anchor="middle">g</text>
+                  <circle class="fig-line fig-dash" cx="404" cy="135" r="62"/>
+                  <path class="fig-line fig-line--acc" d="M314 70 C350 70 362 98 384 116" marker-end="url(#ah-acc)"/>
+                  <path class="fig-line fig-line--acc" d="M314 200 C352 200 384 164 404 142" marker-end="url(#ah-acc)"/>
+                  <path class="fig-line fig-line--acc" d="M392 122 L408 134" stroke-width="2"/>
+                  <circle class="fig-fill-acc" cx="390" cy="120" r="5"/>
+                  <circle class="fig-fill-acc" cx="410" cy="136" r="5"/>
+                  <circle class="fig-fill-muted" cx="372" cy="96" r="4"/>
+                  <circle class="fig-fill-muted" cx="440" cy="100" r="4"/>
+                  <circle class="fig-fill-muted" cx="446" cy="164" r="4"/>
+                  <circle class="fig-fill-muted" cx="376" cy="170" r="4"/>
+                  <text class="fig-t fig-t--s fig-t--acc" x="420" y="127">attract</text>
+                  <text class="fig-t fig-t--s" x="404" y="224" text-anchor="middle">InfoNCE · Barlow Twins</text>
+                </svg>
+              </figure>
+              <div class="card__body">
+                <p class="card__kicker mono">Representation Learning</p>
+                <h3 class="card__title">Self-Supervised Contrastive Learning</h3>
+                <dl>
+                  <div><dt>Problem</dt><dd>Labelling images is slow and expensive. Can representations learned from unlabeled images compete with a fully supervised model?</dd></div>
+                  <div><dt>Approach</dt><dd>Trained SimCLR (InfoNCE) and Barlow Twins in PyTorch on 100K unlabeled STL10 images using an NVIDIA A100, then ran a logistic-regression linear evaluation on frozen embeddings with 10 to 500 labeled images per class, benchmarked against a supervised baseline.</dd></div>
+                  <div><dt>Results</dt><dd>
+                    <ul class="results">
+                      <li>Top-1 validation accuracy: SimCLR <span class="metric">62.17%</span>, Barlow Twins <span class="metric">59.46%</span></li>
+                      <li>Supervised baseline: <span class="metric">58.35%</span></li>
+                      <li>About <span class="metric">50%</span> relative gain across the 10–500 labels-per-class linear evaluation</li>
+                    </ul>
+                  </dd></div>
+                </dl>
+                <ul class="tags" aria-label="Tech stack">
+                  <li class="tag">PyTorch</li><li class="tag">PyTorch Lightning</li><li class="tag">SimCLR</li><li class="tag">Barlow Twins</li><li class="tag">NVIDIA A100</li><li class="tag">TensorBoard</li>
+                </ul>
+                <a class="card__link" href="https://github.com/ijayeshh/self-supervised-contrastive-learning" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-github"/></svg>View on GitHub<svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+              </div>
+            </article>
+
+            <!-- ResNet50 -->
+            <article class="card reveal">
+              <figure class="card__fig">
+                <svg viewBox="0 0 480 270" role="img" aria-label="Diagram: ResNet-50 built from a stem, four stages of 3, 4, 6 and 3 bottleneck blocks each with a residual skip connection, and a fully connected head.">
+                  <rect class="fig-bg" width="480" height="270"/><rect width="480" height="270" fill="url(#fig-dots)"/>
+                  <text class="fig-t fig-t--s" x="20" y="26">RESNET-50 · FROM SCRATCH</text>
+                  <text class="fig-t fig-t--s fig-t--acc" x="460" y="26" text-anchor="end">1×1 → 3×3 → 1×1 ⊕ x</text>
+                  <path class="fig-line" d="M50 140 H392"/>
+                  <rect class="fig-node" x="16" y="118" width="34" height="44" rx="5"/>
+                  <g class="fig-node fig-node--acc">
+                    <rect x="64" y="122" width="14" height="36" rx="3"/><rect x="83" y="122" width="14" height="36" rx="3"/><rect x="102" y="122" width="14" height="36" rx="3"/>
+                    <rect x="126" y="118" width="14" height="44" rx="3"/><rect x="145" y="118" width="14" height="44" rx="3"/><rect x="164" y="118" width="14" height="44" rx="3"/><rect x="183" y="118" width="14" height="44" rx="3"/>
+                    <rect x="207" y="114" width="14" height="52" rx="3"/><rect x="226" y="114" width="14" height="52" rx="3"/><rect x="245" y="114" width="14" height="52" rx="3"/><rect x="264" y="114" width="14" height="52" rx="3"/><rect x="283" y="114" width="14" height="52" rx="3"/><rect x="302" y="114" width="14" height="52" rx="3"/>
+                    <rect x="326" y="110" width="14" height="60" rx="3"/><rect x="345" y="110" width="14" height="60" rx="3"/><rect x="364" y="110" width="14" height="60" rx="3"/>
+                  </g>
+                  <g class="fig-line fig-line--acc">
+                    <path d="M62 120 Q71 100 80 120"/><path d="M81 120 Q90 100 99 120"/><path d="M100 120 Q109 100 118 120"/>
+                    <path d="M124 116 Q133 94 142 116"/><path d="M143 116 Q152 94 161 116"/><path d="M162 116 Q171 94 180 116"/><path d="M181 116 Q190 94 199 116"/>
+                    <path d="M205 112 Q214 88 223 112"/><path d="M224 112 Q233 88 242 112"/><path d="M243 112 Q252 88 261 112"/><path d="M262 112 Q271 88 280 112"/><path d="M281 112 Q290 88 299 112"/><path d="M300 112 Q309 88 318 112"/>
+                    <path d="M324 108 Q333 82 342 108"/><path d="M343 108 Q352 82 361 108"/><path d="M362 108 Q371 82 380 108"/>
+                  </g>
+                  <rect class="fig-node" x="392" y="118" width="34" height="44" rx="5"/>
+                  <path class="fig-line fig-line--acc" d="M426 140 H452" marker-end="url(#ah-acc)"/>
+                  <circle class="fig-fill-acc" cx="460" cy="140" r="5"/>
+                  <g class="fig-t fig-t--s" text-anchor="middle">
+                    <text x="33" y="190">stem</text>
+                    <text x="90" y="190">conv2_x</text><text x="90" y="204">×3</text>
+                    <text x="161" y="190">conv3_x</text><text x="161" y="204">×4</text>
+                    <text x="261" y="190">conv4_x</text><text x="261" y="204">×6</text>
+                    <text x="352" y="190">conv5_x</text><text x="352" y="204">×3</text>
+                    <text x="409" y="190">fc</text>
+                  </g>
+                  <text class="fig-t fig-t--s" x="20" y="252">DVC: INGEST → PREPARE → TRAIN → EVALUATE</text>
+                </svg>
+              </figure>
+              <div class="card__body">
+                <p class="card__kicker mono">Architecture · Pipeline</p>
+                <h3 class="card__title">ResNet-50 from Scratch in PyTorch</h3>
+                <dl>
+                  <div><dt>Problem</dt><dd>Understand residual networks by building one instead of importing it, and train it inside a reproducible pipeline rather than a one-off notebook.</dd></div>
+                  <div><dt>Approach</dt><dd>Implemented ResNet-50 from scratch in PyTorch for the Intel Image Classification dataset. Training is a modular, config-driven pipeline (data ingestion, model preparation, training, evaluation) orchestrated as DVC stages, with a Flask app for prediction.</dd></div>
+                  <div><dt>Results</dt><dd>
+                    <ul class="results">
+                      <li>Bottleneck residual architecture written layer by layer</li>
+                      <li>Four reproducible DVC stages from raw data to an evaluated model</li>
+                      <li>YAML-driven configuration and parameters, with no hard-coded paths</li>
+                    </ul>
+                  </dd></div>
+                </dl>
+                <ul class="tags" aria-label="Tech stack">
+                  <li class="tag">PyTorch</li><li class="tag">ResNet-50</li><li class="tag">DVC</li><li class="tag">Flask</li><li class="tag">YAML config</li>
+                </ul>
+                <a class="card__link" href="https://github.com/ijayeshh/resnet50-scratch-pytorch" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-github"/></svg>View on GitHub<svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+              </div>
+            </article>
+
+            <!-- MLOps -->
+            <article class="card reveal">
+              <figure class="card__fig">
+                <svg viewBox="0 0 480 270" role="img" aria-label="Diagram: a DVC pipeline of ingest, VGG16 base model, training and MLflow evaluation, and a CI/CD flow from git commit through GitHub Actions and Docker to AWS ECR and deployment.">
+                  <rect class="fig-bg" width="480" height="270"/><rect width="480" height="270" fill="url(#fig-dots)"/>
+                  <text class="fig-t fig-t--s" x="20" y="30">DVC PIPELINE</text>
+                  <rect class="fig-node" x="20" y="44" width="96" height="34" rx="7"/><text class="fig-t" x="68" y="65" text-anchor="middle">ingest</text>
+                  <rect class="fig-node" x="136" y="44" width="96" height="34" rx="7"/><text class="fig-t" x="184" y="65" text-anchor="middle">VGG16 base</text>
+                  <rect class="fig-node" x="252" y="44" width="96" height="34" rx="7"/><text class="fig-t" x="300" y="65" text-anchor="middle">train</text>
+                  <rect class="fig-node fig-node--acc" x="368" y="44" width="96" height="34" rx="7"/><text class="fig-t fig-t--acc" x="416" y="65" text-anchor="middle">evaluate</text>
+                  <path class="fig-line" d="M116 61 H134 M232 61 H250 M348 61 H366"/>
+                  <path class="fig-arrowhead" d="M128 57 l6 4 l-6 4z M244 57 l6 4 l-6 4z M360 57 l6 4 l-6 4z"/>
+                  <g class="fig-t fig-t--s" text-anchor="middle">
+                    <text x="68" y="96">data.zip</text><text x="184" y="96">imagenet · frozen</text><text x="300" y="96">Keras</text><text x="416" y="96">MLflow</text>
+                  </g>
+                  <path class="fig-line fig-dash" d="M20 126 H464"/>
+                  <text class="fig-t fig-t--s" x="20" y="152">CI/CD</text>
+                  <rect class="fig-node" x="20" y="166" width="76" height="34" rx="7"/><text class="fig-t" x="58" y="187" text-anchor="middle">commit</text>
+                  <rect class="fig-node" x="112" y="166" width="76" height="34" rx="7"/><text class="fig-t" x="150" y="187" text-anchor="middle">Actions</text>
+                  <rect class="fig-node" x="204" y="166" width="76" height="34" rx="7"/><text class="fig-t" x="242" y="187" text-anchor="middle">Docker</text>
+                  <rect class="fig-node" x="296" y="166" width="76" height="34" rx="7"/><text class="fig-t" x="334" y="187" text-anchor="middle">ECR</text>
+                  <rect class="fig-node fig-node--acc" x="388" y="166" width="76" height="34" rx="7"/><text class="fig-t fig-t--acc" x="426" y="187" text-anchor="middle">deploy</text>
+                  <path class="fig-line" d="M96 183 H110 M188 183 H202 M280 183 H294 M372 183 H386"/>
+                  <path class="fig-arrowhead" d="M104 179 l6 4 l-6 4z M196 179 l6 4 l-6 4z M288 179 l6 4 l-6 4z M380 179 l6 4 l-6 4z"/>
+                  <g class="fig-t fig-t--s" text-anchor="middle">
+                    <text x="58" y="218">main</text><text x="150" y="218">CI</text><text x="242" y="218">build</text><text x="334" y="218">AWS</text><text x="426" y="218">container</text>
+                  </g>
+                </svg>
+              </figure>
+              <div class="card__body">
+                <p class="card__kicker mono">MLOps · Transfer Learning</p>
+                <h3 class="card__title">End-to-End MLOps for Disease Classification</h3>
+                <dl>
+                  <div><dt>Problem</dt><dd>A model that only lives in a notebook isn't usable. Training has to be reproducible, and getting to deployment shouldn't be a manual step.</dd></div>
+                  <div><dt>Approach</dt><dd>A binary image classifier built with VGG16 transfer learning (ImageNet weights, frozen base) in TensorFlow/Keras, structured as four DVC stages with MLflow tracking for evaluation. It's packaged as a Dockerized web app, and a GitHub Actions workflow builds and pushes the image to AWS ECR, then deploys it.</dd></div>
+                  <div><dt>Results</dt><dd>
+                    <ul class="results">
+                      <li>Push-to-deploy: every commit to main rebuilds, pushes and redeploys the container</li>
+                      <li>Reproducible pipeline with tracked evaluation runs in MLflow</li>
+                      <li>Pipeline settings and model parameters kept in YAML</li>
+                    </ul>
+                  </dd></div>
+                </dl>
+                <ul class="tags" aria-label="Tech stack">
+                  <li class="tag">TensorFlow/Keras</li><li class="tag">VGG16</li><li class="tag">DVC</li><li class="tag">MLflow</li><li class="tag">Docker</li><li class="tag">GitHub Actions</li><li class="tag">AWS ECR</li>
+                </ul>
+                <a class="card__link" href="https://github.com/ijayeshh/mlops-disease-classification" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-github"/></svg>View on GitHub<svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== SKILLS ============================== -->
+    <section class="section" id="skills" aria-labelledby="skills-title">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="section__label mono"><span class="num">04</span>Skills</p>
+          <h2 class="section__title" id="skills-title">Toolkit</h2>
+        </div>
+        <div class="skills">
+          <div class="skill-group reveal">
+            <h3><span class="mono">01</span>GenAI &amp; LLMs</h3>
+            <ul class="tags">
+              <li class="tag">Transformers</li><li class="tag">Hugging Face</li><li class="tag">BERT</li><li class="tag">LoRA/QLoRA</li><li class="tag">PEFT</li><li class="tag">DPO</li><li class="tag">Prompt Engineering</li><li class="tag">RAG</li><li class="tag">LangChain</li><li class="tag">LangGraph</li><li class="tag">MCP</li><li class="tag">Guardrails</li><li class="tag">FAISS</li><li class="tag">ChromaDB</li><li class="tag">vLLM</li><li class="tag">Ollama</li><li class="tag">Groq</li><li class="tag">Claude</li><li class="tag">AWS Bedrock</li><li class="tag">Ragas</li><li class="tag">promptfoo</li><li class="tag">LangSmith</li>
+            </ul>
+          </div>
+          <div class="skill-group reveal">
+            <h3><span class="mono">02</span>ML &amp; Computer Vision</h3>
+            <ul class="tags">
+              <li class="tag">PyTorch</li><li class="tag">Scikit-learn</li><li class="tag">XGBoost</li><li class="tag">Semantic Segmentation</li><li class="tag">Multitask Learning</li><li class="tag">Depth Completion</li><li class="tag">Self-Supervised Learning</li><li class="tag">Grad-CAM</li><li class="tag">Causal Inference (ATE)</li><li class="tag">NumPy</li><li class="tag">Pandas</li>
+            </ul>
+          </div>
+          <div class="skill-group reveal">
+            <h3><span class="mono">03</span>MLOps &amp; Cloud</h3>
+            <ul class="tags">
+              <li class="tag">ONNX</li><li class="tag">NVIDIA Triton</li><li class="tag">MLflow</li><li class="tag">Docker</li><li class="tag">Kubernetes</li><li class="tag">GitHub Actions</li><li class="tag">AWS</li><li class="tag">Airflow</li><li class="tag">dbt</li><li class="tag">pytest</li>
+            </ul>
+          </div>
+          <div class="skill-group reveal">
+            <h3><span class="mono">04</span>Languages &amp; Data</h3>
+            <ul class="tags">
+              <li class="tag">Python</li><li class="tag">C++</li><li class="tag">SQL</li><li class="tag">TypeScript</li><li class="tag">FastAPI</li><li class="tag">Streamlit</li><li class="tag">PostgreSQL</li><li class="tag">SQLite</li><li class="tag">Redis</li><li class="tag">ETL/ELT</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== EDUCATION ============================== -->
+    <section class="section" id="education" aria-labelledby="education-title">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="section__label mono"><span class="num">05</span>Education</p>
+          <h2 class="section__title" id="education-title">Education</h2>
+        </div>
+        <div class="edu">
+          <article class="edu__item reveal">
+            <span class="edu__date mono">Aug 2024 to May 2026</span>
+            <h3>North Carolina State University</h3>
+            <p class="edu__degree">Master of Science, Electrical and Computer Engineering</p>
+            <div class="edu__meta mono"><span>Raleigh, NC</span><span class="gpa">GPA 3.76 / 4.0</span></div>
+            <p class="edu__course"><span>Coursework</span>Gen AI: Applications · Computer Vision · Pattern Recognition &amp; Machine Learning · Cloud Computing</p>
+          </article>
+          <article class="edu__item reveal">
+            <span class="edu__date mono">Aug 2018 to May 2022</span>
+            <h3>College of Engineering Pune</h3>
+            <p class="edu__degree">Bachelor of Technology, Electrical Engineering</p>
+            <div class="edu__meta mono"><span>Pune, India</span><span class="gpa">GPA 8.08 / 10</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== CONTACT ============================== -->
+    <section class="section" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="section__label mono"><span class="num">06</span>Contact</p>
+        </div>
+        <div class="contact">
+          <div class="reveal">
+            <h2 class="contact__lead" id="contact-title">Working on <em>ML that has to ship</em>? I'd like to hear about it.</h2>
+            <p class="section__intro" style="margin-bottom:1.5rem">I'm interested in AI/ML engineering and forward deployed engineering roles. Email is the best way to reach me.</p>
+            <a class="contact__email" href="mailto:jingale@ncsu.edu"><svg width="20" height="20" aria-hidden="true"><use href="#i-mail"/></svg>jingale@ncsu.edu</a>
+          </div>
+          <ul class="links reveal">
+            <li><a href="https://github.com/ijayeshh" target="_blank" rel="noopener"><span class="l"><svg aria-hidden="true"><use href="#i-github"/></svg>GitHub</span><span class="r">github.com/ijayeshh</span></a></li>
+            <li><a href="https://www.linkedin.com/in/ingalejayesh/" target="_blank" rel="noopener"><span class="l"><svg aria-hidden="true"><use href="#i-linkedin"/></svg>LinkedIn</span><span class="r">in/ingalejayesh</span></a></li>
+            <li><a href="assets/Jayesh_Ingale_Resume.pdf" download="Jayesh_Ingale_Resume.pdf"><span class="l"><svg aria-hidden="true"><use href="#i-download"/></svg>Resume</span><span class="r">PDF</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container mono">
+      <span>© <span id="year">2026</span> Jayesh Ingale</span>
+      <span>Raleigh, NC</span>
+    </div>
+  </footer>
+</body>
+</html>
